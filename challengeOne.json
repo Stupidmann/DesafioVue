@@ -1,0 +1,101 @@
+{ "empresas" : [
+  {
+    "id": 1,
+    "name": "WebExperto",
+    "description": "Hace más de 12 años brindamos soluciones a importantes marcas y los más variados y complejos proyectos. Nuestra experiencia te asegura que siempre estaremos a tu lado y te convierte a vos en un experto en la web.",
+    "type": "blue",
+    "value": 11111,
+    "size": 11,
+    "link": "https://www.web-experto.com.ar/"
+  },
+  {
+    "id": 2,
+    "name": "Talkiu",
+    "description": "El 87% de los consumidores realiza búsquedas en internet antes de realizar una compra online o por los canales tradicionales. Con Talkiu puedes centralizar toda la información de tus productos en un sólo lugar, compartirla con tus canales de venta y viralizar los cambios al instante.",
+    "type": "green",
+    "value": 11112,
+    "size": 12,
+    "link": "https://www.talkiu.com"
+  },
+  {
+    "id": 3,
+    "name": "ejemplo",
+    "description": "Descripción de otra empresa",
+    "type": "blue",
+    "value": 1002,
+    "size": 5,
+    "link": "https://www.talkiu.com"
+  },
+  {
+    "id": 4,
+    "name": "otro ejemplo",
+    "description": "Hace más de 12 años brindamos soluciones a importantes marcas y los más variados y complejos proyectos. Nuestra experiencia te asegura que siempre estaremos a tu lado y te convierte a vos en un experto en la web.",
+    "type": "red",
+    "value": 50000,
+    "size": 10,
+    "link": "https://www.talkiu.com"
+  },
+  {
+    "id": 5,
+    "name": "Empresa",
+    "description": "Una empresa es una organización o institución dedicada a actividades o persecución de fines económicos o comerciales para satisfacer las necesidades de bienes y/o servicios de la sociedad, a la par de asegurar la continuidad de la estructura productivo-comercial así como sus necesarias inversiones.",
+    "type": "green",
+    "value": 50000,
+    "size": 10,
+    "link": "https://www.talkiu.com"
+  },
+  {
+    "id": 6,
+    "name": "Empresa 10",
+    "description": "Descripción de otra empresa",
+    "type": "blue",
+    "value": 1002,
+    "size": 5,
+    "link": "https://www.talkiu.com"
+  },
+  {
+    "id": 7,
+    "name": "día 34",
+    "description": "Hace más de 12 años brindamos soluciones a importantes marcas y los más variados y complejos proyectos. Nuestra experiencia te asegura que siempre estaremos a tu lado y te convierte a vos en un experto en la web.",
+    "type": "red",
+    "value": 50000,
+    "size": 10,
+    "link": "https://www.talkiu.com"
+  },
+  {
+    "id": 8,
+    "name": "año bisiesto",
+    "description": "Una empresa es una organización o institución dedicada a actividades o persecución de fines económicos o comerciales para satisfacer las necesidades de bienes y/o servicios de la sociedad, a la par de asegurar la continuidad de la estructura productivo-comercial así como sus necesarias inversiones.",
+    "type": "green",
+    "value": 50000,
+    "size": 10,
+    "link": "https://www.talkiu.com"
+  },
+  {
+    "id": 9,
+    "name": "Empresa 210",
+    "description": "Descripción de otra empresa",
+    "type": "blue",
+    "value": 1002,
+    "size": 5,
+    "link": "https://www.talkiu.com"
+  },
+  {
+    "id": 10,
+    "name": "#día día",
+    "description": "Hace más de 12 años brindamos soluciones a importantes marcas y los más variados y complejos proyectos. Nuestra experiencia te asegura que siempre estaremos a tu lado y te convierte a vos en un experto en la web.",
+    "type": "red",
+    "value": 50000,
+    "size": 10,
+    "link": "https://www.talkiu.com"
+  },
+  {
+    "id": 11,
+    "name": "srl",
+    "description": "Una empresa es una organización o institución dedicada a actividades o persecución de fines económicos o comerciales para satisfacer las necesidades de bienes y/o servicios de la sociedad, a la par de asegurar la continuidad de la estructura productivo-comercial así como sus necesarias inversiones.",
+    "type": "green",
+    "value": 50000,
+    "size": 10,
+    "link": "https://www.talkiu.com"
+  }
+]}
