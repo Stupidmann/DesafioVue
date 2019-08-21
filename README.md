@@ -5,7 +5,7 @@ Nuestra idea es que no hagas solo lo que te pedimos sino que le pongas tu estilo
 
 ## Challenge 1
 
-En este desafío te toca trabajar con un listado de objetos que te damos. Tu objetivo es armar una tabla que liste estos objetos agregandole las siquientes acciones:
+En este desafío te toca trabajar con un listado de objetos que te damos (challengeOne.json). Tu objetivo es armar una tabla que liste estos objetos agregandole las siquientes acciones:
 * Poder filtar por nombre y descripción (sin importar mayúsculas ni tildes)
 * Agregá los filtros que veas necesarios
 * Poder reordenar por precio
