@@ -23,6 +23,11 @@ En este desafío te damos un componente para que modifiques y le agregues las si
 
 
 ## Project setup
+
+Vue version ^2.6.10
+
+Asegurate de tener [yarn](https://yarnpkg.com/en/docs/install#debian-stable)
+
 ```
 yarn install
 ```
