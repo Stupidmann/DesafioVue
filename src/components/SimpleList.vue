@@ -143,10 +143,17 @@ export default {
 </script>-->
 <template>
   <div>
-    <ul>
-      <h1>{{title}}</h1>
-      <li v-for="(list, index) in empresas">{{list.name}}</li>
-    </ul>
+    <h1>{{title}}</h1>
+    <input type="text" v-model="search" placeholder="Buscar Empresas" />
+    <button >Ordenar Por Precio</button>
+    <div>
+      <div v-for="(list) in filteredItems" :key="list.id">
+        <h2>{{list.name | removeSpecialChars | capitalize}}</h2>
+        <p>{{list.description}}</p>
+        <p>{{list.value}}</p>
+        <p>{{list.link}}</p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -160,7 +167,8 @@ export default {
   data () {
     return {
       title: 'Empresas',
-      empresas: []
+      empresas: [],
+      search: ''
     }
   },
   methods: {
@@ -174,6 +182,38 @@ export default {
         .catch(function (error) {
           console.log('Error: ', error)
         })
+    }
+  },
+  computed: {
+    filteredItems () {
+      return this.empresas.filter(item => {
+        return item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+      })
+    }
+  },
+  filters: {
+    capitalize (val) {
+      if (!val) return ''
+      val = val.toString()
+      return val.charAt(0).toUpperCase() + val.slice(1)
+    },
+    cleanString (val) {
+      if (!val) return ''
+      val = val.toString()
+      return val
+    },
+    removeAccents (val) {
+      return val
+        .replace(/á/g, 'a')
+        .replace(/é/g, 'e')
+        .replace(/í/g, 'i')
+        .replace(/ó/g, 'o')
+        .replace(/ú/g, 'u')
+    },
+    removeSpecialChars (str) {
+      return str.replace(/&\/\\#,+()$~%'":*?<>{}|]/g, '')
+        .replace(/\s+/g, ' ')
+        .replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2')
     }
   }
 }
