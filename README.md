@@ -1,18 +1,18 @@
 # vue-challenge
 
 # Challenges
-Nuestra idea es que no hagas solo lo que te pedimos sino que le pongas tu estilo también. Las únicas reglas son que la información que te damos no se puede modificar y que el objetivo es cumplir los puntos que te pedimos para cada challenge.
+Los desafíos incluyen los mínimos requerimiento para cumplimentarlos pero todo lo que aportes extra será tenido en cuenta. Una regla importante es que los datos que te brindamos no se puede modificar para cumplir con el cada challenge.
 
 ## Challenge 1
 
-En este desafío te toca trabajar con un listado de objetos que te damos (challengeOne.json). Tu objetivo es armar una tabla que liste estos objetos agregandole las siquientes acciones:
+En este desafío te toca trabajar con un listado de objetos que te damos (challengeOne.json). Tu objetivo es armar un listado que muestre estos objetos agregandole las siquientes acciones:
 * Poder filtar por nombre y descripción (sin importar mayúsculas ni tildes)
-* Agregá los filtros que veas necesarios
+* Agregá los filtros que creas necesarios
 * Poder reordenar por precio
-* Paginación
-* Botón de agregar a favoritos
-* Checkbox lateral que te permita realizar operaciones grupales. Por ejemplo selecciono 3 y los marco como favoritos
-* Unit test. Recomendamos el uso de Jest para testear.
+* Paginación de elementos
+* Agregá un botón a cada objeto para agregar a "favoritos".
+* Checkbox lateral que te permita realizar operaciones grupales. Por ejemplo seleccionar 3 elementos y agregarlos a favoritos.
+* Agregar Unit test y E2E test (recomendamos el uso de Jest).
 
 ## Challenge 2
 
