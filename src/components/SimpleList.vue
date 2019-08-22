@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   <ul>
     <li v-for="offer in offers" :key="offer.id">{{ offer.title }}</li>
   </ul>
@@ -137,6 +137,43 @@ export default {
           ]
         }
       ]
+    }
+  }
+}
+</script>-->
+<template>
+  <div>
+    <ul>
+      <h1>{{title}}</h1>
+      <li v-for="(list, index) in empresas">{{list.name}}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+
+  created: function () {
+    this.getEmpresas()
+  },
+
+  data () {
+    return {
+      title: 'Empresas',
+      empresas: []
+    }
+  },
+  methods: {
+    getEmpresas () {
+      const url = './../challengeOne.json'
+
+      this.$http.get(url)
+        .then(function (res) {
+          this.empresas = (res.data.empresas)
+        })
+        .catch(function (error) {
+          console.log('Error: ', error)
+        })
     }
   }
 }
