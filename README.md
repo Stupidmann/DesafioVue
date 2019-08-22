@@ -16,7 +16,10 @@ En este desafío te toca trabajar con un listado de objetos que te damos (challe
 
 ## Challenge 2
 
-En este desafío te damos un componente para que modifiques y le agregues las siguientes funcionalidades:
+En este desafío te damos un componente Vue.js para que modifiques y le agregues las siguientes funcionalidades:
+
+* Lavantar primero el server como se indica debajo para visualizar el componente.
+* El componente se encuentra en /src/components/SimpleList.vue
 * Al clickear en uno de los objetos listados deben verse todos los datos del mismo (y debe tener opción de cerrarse).
 * Agregar la información que creas básica a la primer vista del objeto
 * Agregá animacion/es. Por ejemplo al clickear para ver la información extra.
