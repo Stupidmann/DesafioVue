@@ -7,12 +7,12 @@
 
 <script>
 import SimpleList from './components/SimpleList.vue'
-// import Empresas from './components/Empresas.vue'
+import Empresas from './components/Empresas.vue'
 
 export default {
   name: 'app',
   components: {
-    // Empresas, Comentado para poder realizar el commit
+    Empresas,
     SimpleList
   }
 }

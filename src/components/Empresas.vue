@@ -83,7 +83,7 @@ export default {
         .replace(/ú/g, 'u')
     },
     removeSpecialChars (str) {
-      return str.replace(/&\/\\#,+()$~%'":*?<>{}|]/g, '') // [ eliminado para hacer el commit
+      return str.replace(/[&\/\\#,+()$~%'":*?<>{}|]/g, '') // [ eliminado para hacer el commit
         .replace(/\s+/g, ' ')
         .replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2')
     }
