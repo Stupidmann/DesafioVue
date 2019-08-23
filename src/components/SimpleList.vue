@@ -5,19 +5,19 @@
       {{ offer.title }}
       <span> - ${{offer.price}}</span>
     </li>
+      <div v-show="clicked">
+        <h2>Details</h2>
+        <h3>{{title}}</h3>
+        <p>Price: {{price}}</p>
+        <p>From: {{from}}</p>
+        <p>To: {{to}}</p>
+        <p>State: {{state}}</p>
+        <p>Created At: {{created_at}}</p>
+        <p>Special Price: {{specialPrice}}</p>
+        <p v-html="description"></p>
+        <button @click="ocultar">Close</button>
+      </div>
 
-    <div v-show="clicked">
-      <h2>Details</h2>
-      <h3>{{title}}</h3>
-      <p>Price: {{price}}</p>
-      <p>From: {{from}}</p>
-      <p>To: {{to}}</p>
-      <p>State: {{state}}</p>
-      <p>Created At: {{created_at}}</p>
-      <p>Special Price: {{specialPrice}}</p>
-      <p v-html="description"></p>
-      <button @click="ocultar">Close</button>
-    </div>
   </ul>
 </template>
 

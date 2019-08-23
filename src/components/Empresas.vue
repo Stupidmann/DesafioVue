@@ -26,7 +26,7 @@
       </div>
     </paginate>
 
-    <paginate-links for="filteredItems"></paginate-links>
+    <paginate-links for="filteredItems" :classes="{'ul': 'pagination', 'li': 'page-item','a': 'page-link'}"></paginate-links>
 
   </div>
 </template>
