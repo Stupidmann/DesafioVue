@@ -1,6 +1,23 @@
-<!--<template>
+<template>
   <ul>
-    <li v-for="offer in offers" :key="offer.id">{{ offer.title }}</li>
+    <li v-for="offer in offers" :key="offer.id"
+      @click="mostrarDetalles(offer)">
+      {{ offer.title }}
+      <span> - ${{offer.price}}</span>
+    </li>
+
+    <div v-show="clicked">
+      <h2>Details</h2>
+      <h3>{{title}}</h3>
+      <p>Price: {{price}}</p>
+      <p>From: {{from}}</p>
+      <p>To: {{to}}</p>
+      <p>State: {{state}}</p>
+      <p>Created At: {{created_at}}</p>
+      <p>Special Price: {{specialPrice}}</p>
+      <p v-html="description"></p>
+      <button @click="ocultar">Close</button>
+    </div>
   </ul>
 </template>
 
@@ -136,84 +153,34 @@ export default {
             }
           ]
         }
-      ]
-    }
-  }
-}
-</script>-->
-<template>
-  <div>
-    <h1>{{title}}</h1>
-    <input type="text" v-model="search" placeholder="Buscar Empresas" />
-    <button >Ordenar Por Precio</button>
-    <div>
-      <div v-for="(list) in filteredItems" :key="list.id">
-        <h2>{{list.name | removeSpecialChars | capitalize}}</h2>
-        <p>{{list.description}}</p>
-        <p>{{list.value}}</p>
-        <p>{{list.link}}</p>
-      </div>
-    </div>
-  </div>
-</template>
+      ],
+      id: Number,
+      title: '',
+      from: '',
+      to: '',
+      state: '',
+      created_at: '',
+      price: '',
+      specialPrice: undefined,
+      description: '',
+      clicked: false
 
-<script>
-export default {
-
-  created: function () {
-    this.getEmpresas()
-  },
-
-  data () {
-    return {
-      title: 'Empresas',
-      empresas: [],
-      search: ''
     }
   },
   methods: {
-    getEmpresas () {
-      const url = './../challengeOne.json'
-
-      this.$http.get(url)
-        .then(function (res) {
-          this.empresas = (res.data.empresas)
-        })
-        .catch(function (error) {
-          console.log('Error: ', error)
-        })
-    }
-  },
-  computed: {
-    filteredItems () {
-      return this.empresas.filter(item => {
-        return item.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1
-      })
-    }
-  },
-  filters: {
-    capitalize (val) {
-      if (!val) return ''
-      val = val.toString()
-      return val.charAt(0).toUpperCase() + val.slice(1)
+    mostrarDetalles (offer) {
+      this.clicked = true
+      this.title = offer.title
+      this.price = offer.price
+      this.from = offer.from
+      this.to = offer.to
+      this.state = offer.state
+      this.created_at = offer.created_at
+      this.specialPrice = offer.specialPrice
+      this.description = offer.description
     },
-    cleanString (val) {
-      if (!val) return ''
-      val = val.toString()
-      return val
-    },
-    removeAccents (val) {
-      return val
-        .replace(/á/g, 'a')
-        .replace(/é/g, 'e')
-        .replace(/í/g, 'i')
-        .replace(/ó/g, 'o')
-        .replace(/ú/g, 'u')
-    },
-    removeSpecialChars (str) {
-      return str.replace(/&\/\\#,+()$~%'":*?<>{}|]/g, '')
-        .replace(/\s+/g, ' ')
-        .replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2')
+    ocultar () {
+      this.clicked = false
     }
   }
 }
