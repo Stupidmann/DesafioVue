@@ -4,8 +4,8 @@
     <input type="text" v-model="search" placeholder="Buscar Empresas" />
     <button @click="sortHighest">Most Rated</button>
     <p>{{favs.length}}</p>
-    <div>
-      <div v-for="(list) in filteredItems" :key="list.id">
+    <paginate name="filteredItems" :list="filteredItems" :per="3">
+      <div v-for="list in paginated('filteredItems')" :key="list.id">
 
         <h2>{{list.name | removeSpecialChars | capitalize}}</h2>
         <p>{{list.description}}</p>
@@ -16,7 +16,10 @@
         <button v-on:click="addToFav(list)">FAV</button>
 
       </div>
-    </div>
+    </paginate>
+
+    <paginate-links for="filteredItems"></paginate-links>
+
   </div>
 </template>
 
@@ -33,7 +36,8 @@ export default {
       empresas: [],
       order: [],
       search: '',
-      favs: []
+      favs: [],
+      paginate: ['filteredItems']
     }
   },
   methods: {
@@ -83,7 +87,7 @@ export default {
         .replace(/ú/g, 'u')
     },
     removeSpecialChars (str) {
-      return str.replace(/[&\/\\#,+()$~%'":*?<>{}|]/g, '') // [ eliminado para hacer el commit
+      return str.replace(/&\/\\#,+()$~%'":*?<>{}|]/g, '') // [ antes del '&' eliminado para hacer el commit
         .replace(/\s+/g, ' ')
         .replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2')
     }

@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <!--<empresas></empresas>-->
     <SimpleList msg="Welcome to Your Vue.js App"/>
+    <empresas></empresas>
+
   </div>
 </template>
 
