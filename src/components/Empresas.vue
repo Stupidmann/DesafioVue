@@ -3,7 +3,12 @@
     <h1>{{title}}</h1>
     <input type="text" v-model="search" placeholder="Buscar Empresas" />
     <button @click="sortHighest">Most Rated</button>
-    <p>{{favs.length}}</p>
+    <p>Favorites: {{favs.length}}</p>
+    <div v-if="checkedNames.length > 0">
+      <span>Checked: {{ checkedNames }}</span>
+      <button @click="addToFav(checkedNames)">Add to Favorites</button>
+    </div>
+
     <paginate name="filteredItems" :list="filteredItems" :per="3">
       <div v-for="list in paginated('filteredItems')" :key="list.id">
 
@@ -13,7 +18,10 @@
         <p>{{list.link}}</p>
         <p>{{list.id}}</p>
 
-        <button v-on:click="addToFav(list)">FAV</button>
+        <input type="checkbox" :value='list.name' v-model="checkedNames">
+        <label for=list.name>{{list.name}}:</label>
+
+        <button v-on:click="addToFav(list.name)">FAV</button>
 
       </div>
     </paginate>
@@ -32,6 +40,7 @@ export default {
 
   data () {
     return {
+      checkedNames: [],
       title: 'Empresas',
       empresas: [],
       order: [],
@@ -57,6 +66,8 @@ export default {
     },
     addToFav (id) {
       this.favs.push(id)
+      this.checkedNames = []
+      console.log(this.favs)
     }
 
   },
