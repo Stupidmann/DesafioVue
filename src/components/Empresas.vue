@@ -1,16 +1,18 @@
 <template>
-  <div>
-    <h1>{{title}}</h1>
-    <input type="text" v-model="search" placeholder="Buscar Empresas" />
-    <button @click="sortHighest">Most Rated</button>
-    <p>Favorites: {{favs.length}}</p>
-    <div v-if="checkedNames.length > 0">
-      <span>Checked: {{ checkedNames }}</span>
-      <button @click="addToFav(checkedNames)">Add to Favorites</button>
+  <b-container>
+    <div class="header">
+      <h1>{{title}}</h1>
+      <input type="text" v-model="search" placeholder="Buscar Empresas" />
+      <button @click="sortHighest">Most Rated</button>
+      <div v-if="checkedNames.length > 0">
+        <span>Checked: {{ checkedNames }}</span>
+        <button @click="addToFav(checkedNames)">Add to Favorites</button>
+      </div>
     </div>
+    <h4>Favorites: {{favs.length}}</h4>
 
     <paginate name="filteredItems" :list="filteredItems" :per="3">
-      <div v-for="list in paginated('filteredItems')" :key="list.id">
+      <div v-for="list in paginated('filteredItems')" :key="list.id" class="justify-content-md-center">
 
         <h2>{{list.name | removeSpecialChars | capitalize}}</h2>
         <p>{{list.description}}</p>
@@ -26,9 +28,9 @@
       </div>
     </paginate>
 
-    <paginate-links for="filteredItems" :classes="{'ul': 'pagination', 'li': 'page-item','a': 'page-link'}"></paginate-links>
+    <paginate-links for="filteredItems" :classes="{'ul': 'pagination', 'li': 'page-item','a': 'page-link'}" class="justify-content-md-center"></paginate-links>
 
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -65,7 +67,7 @@ export default {
       this.empresas.sort((a, b) => parseInt(a.value) < parseInt(b.value) ? 1 : -1)
     },
     addToFav (id) {
-      this.favs.push(id)
+      this.favs = this.favs.concat(id)
       this.checkedNames = []
       console.log(this.favs)
     }
@@ -105,3 +107,11 @@ export default {
   }
 }
 </script>
+
+<style>
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+</style>

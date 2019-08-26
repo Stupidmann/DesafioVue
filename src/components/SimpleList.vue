@@ -1,24 +1,42 @@
 <template>
-  <ul>
-    <li v-for="offer in offers" :key="offer.id"
-      @click="mostrarDetalles(offer)">
-      {{ offer.title }}
-      <span> - ${{offer.price}}</span>
-    </li>
-      <div v-show="clicked">
-        <h2>Details</h2>
-        <h3>{{title}}</h3>
-        <p>Price: {{price}}</p>
-        <p>From: {{from}}</p>
-        <p>To: {{to}}</p>
-        <p>State: {{state}}</p>
-        <p>Created At: {{created_at}}</p>
-        <p>Special Price: {{specialPrice}}</p>
-        <p v-html="description"></p>
-        <button @click="ocultar">Close</button>
-      </div>
 
-  </ul>
+<div class="container">
+  <div class="row justify-content-center">
+  <ul class="col-4 list-group">
+    <b-list-group>
+      <li class="list-group-item" v-b-toggle.collapse-1 variant="primary" v-for="offer in offers" :key="offer.id"
+        @click="mostrarDetalles(offer)">
+        <b-list-group-item href="#">
+        {{ offer.title }}
+        <span> - ${{offer.price}}</span>
+        </b-list-group-item>
+      </li>
+  </b-list-group>
+ </ul>
+</div>
+    <div class="container">
+      <b-row class="justify-content-md-center">
+        <b-collapse id="collapse-1" class="col-8" v-show="clicked">
+          <!--<button @click="ocultar">Close</button>-->
+          <div class="mt-3">
+            <b-card-group deck>
+              <b-card bg-variant="light" :header=title class="text-center">
+                <h2>Details of: {{title}}</h2>
+                <b-card-text>Price: {{price}}</b-card-text>
+                <b-card-text>From: {{from}}</b-card-text>
+                <b-card-text>To: {{to}}</b-card-text>
+                <b-card-text>State: {{state}}</b-card-text>
+                <b-card-text>Created At: {{created_at}}</b-card-text>
+                <b-card-text>Special Price: {{specialPrice}}</b-card-text>
+                <b-card-text v-html="description"></b-card-text>
+              </b-card>
+            </b-card-group>
+          </div>
+        </b-collapse>
+      </b-row>
+    </div>
+</div>
+
 </template>
 
 <script>
