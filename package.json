@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "jest",
+    "test": "jest --watch",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
   },
@@ -14,6 +14,7 @@
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.28",
     "core-js": "^2.6.5",
+    "save-dev": "^2.0.0",
     "vue": "^2.6.10",
     "vue-paginate": "^3.6.0",
     "vue-resource": "^1.5.1"
@@ -39,7 +40,8 @@
     "puppeteer": "^1.19.0",
     "sass-loader": "^7.1.0",
     "vue-jest": "^3.0.4",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "vue-test-utils": "^1.0.0-beta.11"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -51,16 +53,14 @@
     ]
   },
   "jest": {
-    "moduleNameMapper": {
-      "^vue$": "vue/dist/vue.common.js"
-    },
     "moduleFileExtensions": [
       "js",
+      "json",
       "vue"
     ],
     "transform": {
-      "^.+\\.js": "babel-jest",
-      "^.+\\.vue$": "vue-jest"
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
     }
   }
 }
