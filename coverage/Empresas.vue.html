@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for Empresas.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="prettify.css" />
+    <link rel="stylesheet" href="base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="index.html">All files</a> Empresas.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>6/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">20% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>1/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">30% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>6/20</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;b-container&gt;
+    &lt;div class="header"&gt;
+      &lt;h1&gt;{{title}}&lt;/h1&gt;
+      &lt;input type="text" v-model="search" placeholder="Buscar Empresas" /&gt;
+      &lt;button @click="sortHighest"&gt;Most Rated&lt;/button&gt;
+      &lt;div v-if="checkedNames.length &gt; 0"&gt;
+        &lt;span&gt;Checked: {{ checkedNames }}&lt;/span&gt;
+        &lt;button @click="addToFav(checkedNames)"&gt;Add to Favorites&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;h4&gt;Favorites: {{favs.length}}&lt;/h4&gt;
+&nbsp;
+    &lt;paginate name="filteredItems" :list="filteredItems" :per="3"&gt;
+      &lt;div v-for="list in filteredItems" :key="list.id" class="justify-content-md-center"&gt;
+&nbsp;
+        &lt;h2&gt;{{list.name | removeSpecialChars | capitalize}}&lt;/h2&gt;
+        &lt;p&gt;{{list.description}}&lt;/p&gt;
+        &lt;p&gt;{{list.value}}&lt;/p&gt;
+        &lt;p&gt;{{list.link}}&lt;/p&gt;
+        &lt;p&gt;{{list.id}}&lt;/p&gt;
+&nbsp;
+        &lt;input type="checkbox" :value='list.name' v-model="checkedNames"&gt;
+        &lt;label for=list.name&gt;{{list.name}}:&lt;/label&gt;
+&nbsp;
+        &lt;button v-on:click="addToFav(list.name)"&gt;FAV&lt;/button&gt;
+&nbsp;
+      &lt;/div&gt;
+    &lt;/paginate&gt;
+&nbsp;
+    &lt;paginate-links for="filteredItems" :classes="{'ul': 'pagination', 'li': 'page-item','a': 'page-link'}" class="justify-content-md-center"&gt;&lt;/paginate-links&gt;
+&nbsp;
+  &lt;/b-container&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+export default {
+&nbsp;
+  created: function () {
+    this.getEmpresas()
+  },
+&nbsp;
+  data () {
+    return {
+      checkedNames: [],
+      title: 'Empresas',
+      empresas: [],
+      order: [],
+      search: '',
+      favs: [],
+      paginate: ['filteredItems']
+    }
+  },
+  methods: {
+    getEmpresas () {
+      const url = './../challengeOne.json'
+&nbsp;
+<span class="fstat-no" title="function not covered" >      this.$http.get(url)</span>
+        .then(function (res) {
+<span class="cstat-no" title="statement not covered" >          this.empresas = (res.data.empresas)</span>
+<span class="fstat-no" title="function not covered" >        })</span>
+        .catch(function (error) {
+<span class="cstat-no" title="statement not covered" >          console.log('Error: ', error)</span>
+        })
+    },
+    sortHighest () {
+<span class="fstat-no" title="function not covered" >      this.empresas.sort((a, b) =&gt; parseInt(a.value) &lt; parseInt(b.value) ? 1 : -1)</span>
+    },
+    addToFav (id) {
+<span class="cstat-no" title="statement not covered" >      this.favs = this.favs.concat(id)</span>
+<span class="cstat-no" title="statement not covered" >      this.checkedNames = []</span>
+<span class="cstat-no" title="statement not covered" >      console.log(this.favs)</span>
+    }
+&nbsp;
+  },
+  computed: {
+    filteredItems () {
+<span class="fstat-no" title="function not covered" >      return this.empresas.filter(item =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        return item.name.toLowerCase().indexOf(this.search.toLowerCase()) &gt; -1</span>
+      })
+    }
+  },
+  filters: {
+    capitalize (val) {
+<span class="cstat-no" title="statement not covered" >      if (!val) return ''</span>
+<span class="cstat-no" title="statement not covered" >      val = val.toString()</span>
+<span class="cstat-no" title="statement not covered" >      return val.charAt(0).toUpperCase() + val.slice(1)</span>
+    },
+    cleanString (val) {
+<span class="cstat-no" title="statement not covered" >      if (!val) return ''</span>
+<span class="cstat-no" title="statement not covered" >      val = val.toString()</span>
+<span class="cstat-no" title="statement not covered" >      return val</span>
+    },
+    removeAccents (val) {
+<span class="cstat-no" title="statement not covered" >      return val</span>
+        .replace(/á/g, 'a')
+        .replace(/é/g, 'e')
+        .replace(/í/g, 'i')
+        .replace(/ó/g, 'o')
+        .replace(/ú/g, 'u')
+    },
+    removeSpecialChars (str) {
+<span class="cstat-no" title="statement not covered" >      return str.replace(/&amp;\/\\#,+()$~%'":*?&lt;&gt;{}|]/g, '') // [ antes del '&amp;' eliminado para hacer el commit</span>
+        .replace(/\s+/g, ' ')
+        .replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2')
+    }
+  }
+}
+&lt;/script&gt;
+&nbsp;
+&lt;style&gt;
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Aug 29 2019 19:44:26 GMT-0300 (GMT-03:00)
+</div>
+</div>
+<script src="prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="sorter.js"></script>
+</body>
+</html>

@@ -12,7 +12,7 @@
     <h4>Favorites: {{favs.length}}</h4>
 
     <paginate name="filteredItems" :list="filteredItems" :per="3">
-      <div v-for="list in paginated('filteredItems')" :key="list.id" class="justify-content-md-center">
+      <div v-for="list in filteredItems" :key="list.id" class="justify-content-md-center">
 
         <h2>{{list.name | removeSpecialChars | capitalize}}</h2>
         <p>{{list.description}}</p>

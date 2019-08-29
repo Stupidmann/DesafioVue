@@ -1,5 +1,5 @@
 import { shallowMount } from '@vue/test-utils'
-import SimpleList from './SimpleList.vue'
+import SimpleList from '@/components/SimpleList'
 
 let wrapper
 
