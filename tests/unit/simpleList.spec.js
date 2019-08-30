@@ -50,6 +50,13 @@ describe('SimpleList', () => {
         title: 'titulo1'
       }
     })
-    expect(wrapper.text()).toBe('titulo1')
+    expect(wrapper.html()).toContain('oferta 1')
+  })
+
+  it('show details when clicked', () => {
+    wrapper = mount(SimpleList)
+    const liClick = wrapper.find('li')
+    liClick.trigger('click')
+    expect(wrapper.html()).toContain('<h2>Details of: oferta 1</h2>')
   })
 })
