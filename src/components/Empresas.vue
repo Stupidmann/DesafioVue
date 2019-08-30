@@ -6,7 +6,7 @@
       <button @click="sortHighest">Most Rated</button>
       <div v-if="checkedNames.length > 0">
         <span>Checked: {{ checkedNames }}</span>
-        <button @click="addToFav(checkedNames)">Add to Favorites</button>
+        <button id="favButton" @click="addToFav(checkedNames)">Add to Favorites</button>
       </div>
     </div>
     <h4>Favorites: {{favs.length}}</h4>
@@ -23,7 +23,7 @@
         <input type="checkbox" :value='list.name' v-model="checkedNames">
         <label for=list.name>{{list.name}}:</label>
 
-        <button v-on:click="addToFav(list.name)">FAV</button>
+        <button id="favButton" v-on:click="addToFav(list.name)">FAV</button>
 
       </div>
     </paginate>

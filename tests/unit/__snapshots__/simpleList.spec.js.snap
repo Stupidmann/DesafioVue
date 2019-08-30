@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimpleList renders correctly 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="row justify-content-center"
+  >
+    <ul
+      class="col-4 list-group"
+    >
+      <div
+        class="list-group"
+      >
+        <li
+          aria-controls="collapse-1"
+          aria-expanded="false"
+          class="list-group-item"
+          role="button"
+          variant="primary"
+        >
+          <a
+            class="list-group-item list-group-item-action"
+            href="#"
+            target="_self"
+          >
+            
+        oferta 1
+        
+            <span>
+               - $45
+            </span>
+          </a>
+        </li>
+        <li
+          aria-controls="collapse-1"
+          aria-expanded="false"
+          class="list-group-item"
+          role="button"
+          variant="primary"
+        >
+          <a
+            class="list-group-item list-group-item-action"
+            href="#"
+            target="_self"
+          >
+            
+        oferta 2 - esta es una oferta
+        
+            <span>
+               - $55
+            </span>
+          </a>
+        </li>
+        <li
+          aria-controls="collapse-1"
+          aria-expanded="false"
+          class="list-group-item"
+          role="button"
+          variant="primary"
+        >
+          <a
+            class="list-group-item list-group-item-action"
+            href="#"
+            target="_self"
+          >
+            
+        oferta 3 - año día
+        
+            <span>
+               - $77
+            </span>
+          </a>
+        </li>
+        <li
+          aria-controls="collapse-1"
+          aria-expanded="false"
+          class="list-group-item"
+          role="button"
+          variant="primary"
+        >
+          <a
+            class="list-group-item list-group-item-action"
+            href="#"
+            target="_self"
+          >
+            
+        oferta 4
+        
+            <span>
+               - $44
+            </span>
+          </a>
+        </li>
+        <li
+          aria-controls="collapse-1"
+          aria-expanded="false"
+          class="list-group-item"
+          role="button"
+          variant="primary"
+        >
+          <a
+            class="list-group-item list-group-item-action"
+            href="#"
+            target="_self"
+          >
+            
+        oferta 5 - esta es una oferta
+        
+            <span>
+               - $65
+            </span>
+          </a>
+        </li>
+        <li
+          aria-controls="collapse-1"
+          aria-expanded="false"
+          class="list-group-item"
+          role="button"
+          variant="primary"
+        >
+          <a
+            class="list-group-item list-group-item-action"
+            href="#"
+            target="_self"
+          >
+            
+        oferta 6 - año día
+        
+            <span>
+               - $67
+            </span>
+          </a>
+        </li>
+      </div>
+    </ul>
+  </div>
+   
+  <div
+    class="container"
+  >
+    <div
+      class="row justify-content-md-center"
+    >
+      <div
+        class="col-8 collapse"
+        id="collapse-1"
+        style="display: none;"
+      >
+        <div
+          class="mt-3"
+        >
+          <div
+            class="card-deck"
+          >
+            <div
+              class="card text-center bg-light"
+            >
+              <!---->
+              <!---->
+              <div
+                class="card-body"
+              >
+                <!---->
+                <!---->
+                <h2>
+                  Details of: 
+                </h2>
+                 
+                <p
+                  class="card-text"
+                >
+                  Price: 
+                </p>
+                 
+                <p
+                  class="card-text"
+                >
+                  From: 
+                </p>
+                 
+                <p
+                  class="card-text"
+                >
+                  To: 
+                </p>
+                 
+                <p
+                  class="card-text"
+                >
+                  State: 
+                </p>
+                 
+                <p
+                  class="card-text"
+                >
+                  Created At: 
+                </p>
+                 
+                <p
+                  class="card-text"
+                >
+                  Special Price: 
+                </p>
+                 
+                <p
+                  class="card-text"
+                />
+              </div>
+              <!---->
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

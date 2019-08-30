@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component has a name renders correctly 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="header"
+  >
+    <h1>
+      Empresas
+    </h1>
+     
+    <input
+      placeholder="Buscar Empresas"
+      type="text"
+    />
+     
+    <button>
+      Most Rated
+    </button>
+     
+    <!---->
+  </div>
+   
+  <h4>
+    Favorites: 0
+  </h4>
+   
+  <ul />
+   
+  <ul
+    class="justify-content-md-center paginate-links filteredItems"
+  />
+</div>
+`;
