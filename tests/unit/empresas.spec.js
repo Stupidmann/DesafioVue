@@ -63,7 +63,24 @@ describe('component has a name', () => {
   })
 
   it('sort highest works', () => {
-    //  const wrapper = mount(Empresas)
-    //  const func = wrapper.vm.sortHighest()
+    const wrapper = mount(Empresas)
+    wrapper.setData({
+      empresas: [{
+        name: 'empresa 1',
+        value: 120000
+      }, {
+        name: 'empresa 2',
+        value: 120001
+      }]
+    })
+    /*  expect(wrapper.vm.empresas[0]).toEqual({  //comprobar que la funcion sea llamada
+      name: 'empresa 2',
+      value: 120001
+    })  */
+    wrapper.vm.sortHighest()
+    expect(wrapper.vm.empresas[0]).toEqual({
+      name: 'empresa 2',
+      value: 120001
+    })
   })
 })

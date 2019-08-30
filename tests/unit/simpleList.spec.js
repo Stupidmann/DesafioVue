@@ -45,11 +45,7 @@ describe('SimpleList', () => {
   })
 
   it('load details when clicked', () => {
-    wrapper = mount(SimpleList, {
-      propsData: {
-        title: 'titulo1'
-      }
-    })
+    wrapper = mount(SimpleList)
     expect(wrapper.html()).toContain('oferta 1')
   })
 
