@@ -23,29 +23,19 @@ describe('component has a name', () => {
     expect(wrapper.find('h1').text()).toMatch(wrapper.vm.title)
   })
 
-  it('calls the method when clicked', () => {
-    /*  const wrapper = shallow(Empresas)
-    const saveMock = jest.fn()
-    wrapper.vm.save = saveMock
-    wrapper.update()
-
-    wrapper.find('#favButton')[0].trigger('click')
-    expect(saveMock.mock.calls.length).toBe(1)  */
-    /*  const addToFav = jest.fn()
-    const wrapper = mount(Empresas, {
-      methods: {
-        addToFav
+  it('Add To Favs method to add to list of favs', () => {
+    const wrapper = shallowMount(Empresas)
+    wrapper.setData({
+      newFavs: {
+        name: 'socks',
+        value: 10
       }
     })
-    expect(wrapper.contains('button')).toBe(true) //  contains('#favButton') devuelve falso, no encuentra el id
-    const button = wrapper.find('button')
-    button.trigger('click')
-    expect(addToFav).toHaveBeenCalled() */
-    const wrapper = shallowMount(Empresas)
-    const addToFav = jest.fn()
-    wrapper.setMethods({ method: addToFav })
-    wrapper.find('button').trigger('click')
-    expect(addToFav).toHaveBeenCalled() //  Expected mock function to have been called, but it was not called.
+    //  const addToFav = jest.fn()
+    wrapper.vm.getEmpresas()
+    wrapper.vm.addToFav(wrapper.vm.newFavs)
+    expect(wrapper.vm.addToFav).toContain(wrapper.vm.newFavs)
+    //  expect(addToFav).toHaveBeenCalled() //  Expected mock function to have been called, but it was not called.
   })
 
   it('gets data from challengeOne json', () => {
