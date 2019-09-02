@@ -16,6 +16,10 @@ describe('component has a name', () => {
     const wrapper = mount(Empresas)
     expect(wrapper.element).toMatchSnapshot()
   })
+  it('renders correctly', () => {
+    const wrapper = mount(Empresas)
+    expect(wrapper.element).toMatchSnapshot()
+  })
 
   it('check title and h1', () => {
     const wrapper = mount(Empresas)
@@ -39,7 +43,6 @@ describe('component has a name', () => {
   })
 
   it('gets data from challengeOne json', () => {
-    //  const wrapper = mount(Empresas) funciona aunque no se bien como
     const empresas = mount(Empresas, {
       mocks: {
         $http: {
@@ -72,5 +75,24 @@ describe('component has a name', () => {
       name: 'empresa 2',
       value: 120001
     })
+  })
+
+  it('show div if checked names is greater than 1', () => {
+    const wrapper = mount(Empresas)
+    expect(wrapper.html()).not.toContain('Add to Favorites')
+    wrapper.setData({
+      checkedNames: ['WebExperto']
+    })
+    expect(wrapper.html()).toContain('Add to Favorites')
+  })
+
+  it('json call', () => {
+    const wrapper = mount(Empresas)
+    expect(wrapper.html()).not.toContain('<h2>WebExperto</h2>')
+    /*  wrapper.vm.$nextTick({
+      wrapper.vm.getEmpresas()
+    })  */
+    wrapper.vm.getEmpresas()
+    expect(wrapper.html()).toContain('<h2>WebExperto</h2>') //  No encuentra h2 porque no esta presente en el snapshot
   })
 })
