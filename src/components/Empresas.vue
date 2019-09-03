@@ -48,7 +48,8 @@ export default {
       order: [],
       search: '',
       favs: [],
-      paginate: ['filteredItems']
+      paginate: ['filteredItems'],
+      error: false
     }
   },
   methods: {
@@ -56,15 +57,16 @@ export default {
       const axios = require('axios')
       const url = './../challengeOne.json'
       // this.$http.get(url)
-      return axios.get(url)
+      axios.get(url)
         .then((res) => {
           console.log(res.data.empresas)
           //  this.empresas = (res.data.empresas)
           //  data = (res.data.empresas)
           this.empresas = (res.data.empresas)
         })
-        .catch(function (error) {
+        .catch((error) => {
           console.log('Error: ', error)
+          this.error = true
         })
     },
     sortHighest () {

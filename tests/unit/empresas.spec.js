@@ -1,18 +1,29 @@
 import Vue from 'vue'
 
-import { mount, shallowMount } from '@vue/test-utils'
+import { mount } from '@vue/test-utils'
 import Empresas from '@/components/Empresas.vue'
 import VuePaginate from 'vue-paginate'
 import VueResource from 'vue-resource'
 import BootstrapVue from 'bootstrap-vue'
+import { shallow } from 'vue-test-utils'
 import flushPromises from 'flush-promises'
 
 Vue.use(VueResource)
 Vue.use(VuePaginate)
 Vue.use(BootstrapVue)
 
+jest.mock('axios', () => ({
+  get: jest.fn(() => Promise.resolve())
+}))
+
+const { get } = require('axios')
+
 describe('Empresas component', () => {
   const wrapper = mount(Empresas)
+
+  afterEach(() => {
+    jest.clearAllMocks()
+  })
 
   it('renders correctly', () => {
     expect(wrapper.element).toMatchSnapshot()
@@ -24,7 +35,6 @@ describe('Empresas component', () => {
   })
 
   it('Add To Favs method to add to list of favs', () => {
-    const wrapper = shallowMount(Empresas)
     wrapper.setData({
       newFavs: {
         name: 'socks',
@@ -35,32 +45,6 @@ describe('Empresas component', () => {
     wrapper.vm.addToFav(wrapper.vm.newFavs)
     expect(wrapper.vm.addToFav).toContain(wrapper.vm.newFavs)
     //  expect(addToFav).toHaveBeenCalled() //  Expected mock function to have been called, but it was not called.
-  })
-
-  it('gets data from challengeOne json', () => {
-    const empresas = mount(Empresas, {
-      mocks: {
-        $http: {
-          get: () => new Promise(resolve => resolve({ body: ['review A', 'review B'] }))
-        }
-      }
-    })
-    flushPromises().then(() => {
-      expect(empresas.vm.reviews).to.deep.equal(['review A', 'review B'])
-    })
-  })
-
-  it('should throw error', () => {
-    const empresas = mount(Empresas, {
-      mocks: {
-        $http: {
-          get: () => new Promise(resolve => resolve({ body: ['review A', 'review B'] }))
-        }
-      }
-    })
-    flushPromises().catch(() => {
-      expect(empresas.vm.reviews).to.deep.equal(['review A', 'review B'])
-    })
   })
 
   it('sort highest works', () => {
@@ -92,13 +76,22 @@ describe('Empresas component', () => {
     expect(wrapper.html()).toContain('Add to Favorites')
   })
 
-  it('json call', () => {
-    expect(wrapper.html()).not.toContain('<h2>WebExperto</h2>')
-    /*  wrapper.vm.$nextTick({
-      wrapper.vm.getEmpresas()
-    })  */
-    wrapper.vm.getEmpresas()
-    expect(wrapper.html()).toContain('<h2>WebExperto</h2>') //  No encuentra h2 porque no esta presente en el snapshot
+  it('mock axios', () => {
+    get.mockImplementationOnce(() => Promise.resolve([]))
+    const wrapper = shallow(Empresas)
+    wrapper.vm.$nextTick(() => {
+      expect(get).toHaveBeenCalled()
+      expect(get.mock.calls[0][0]).toBe('./../challengeOne.json')
+      expect(wrapper.vm.empresas).toEqual([])
+    })
   })
 
+  it('mock axios fail', async () => {
+    get.mockImplementationOnce(() => Promise.reject(Error))
+    let wrapper = shallow(Empresas)
+    await flushPromises()
+    expect(get).toHaveBeenCalled()
+    expect(get.mock.calls[0][0]).toBe('./../challengeOne.json')
+    expect(wrapper.vm.error).toBe(true)
+  })
 })
