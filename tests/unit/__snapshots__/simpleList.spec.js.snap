@@ -16,7 +16,7 @@ exports[`SimpleList renders correctly 1`] = `
         <li
           aria-controls="collapse-1"
           aria-expanded="false"
-          class="list-group-item"
+          class="list-group-item collapsed"
           role="button"
           variant="primary"
         >
@@ -36,7 +36,7 @@ exports[`SimpleList renders correctly 1`] = `
         <li
           aria-controls="collapse-1"
           aria-expanded="false"
-          class="list-group-item"
+          class="list-group-item collapsed"
           role="button"
           variant="primary"
         >
@@ -56,7 +56,7 @@ exports[`SimpleList renders correctly 1`] = `
         <li
           aria-controls="collapse-1"
           aria-expanded="false"
-          class="list-group-item"
+          class="list-group-item collapsed"
           role="button"
           variant="primary"
         >
@@ -76,7 +76,7 @@ exports[`SimpleList renders correctly 1`] = `
         <li
           aria-controls="collapse-1"
           aria-expanded="false"
-          class="list-group-item"
+          class="list-group-item collapsed"
           role="button"
           variant="primary"
         >
@@ -96,7 +96,7 @@ exports[`SimpleList renders correctly 1`] = `
         <li
           aria-controls="collapse-1"
           aria-expanded="false"
-          class="list-group-item"
+          class="list-group-item collapsed"
           role="button"
           variant="primary"
         >
@@ -116,7 +116,7 @@ exports[`SimpleList renders correctly 1`] = `
         <li
           aria-controls="collapse-1"
           aria-expanded="false"
-          class="list-group-item"
+          class="list-group-item collapsed"
           role="button"
           variant="primary"
         >

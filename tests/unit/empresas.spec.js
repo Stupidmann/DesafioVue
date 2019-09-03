@@ -11,18 +11,14 @@ Vue.use(VueResource)
 Vue.use(VuePaginate)
 Vue.use(BootstrapVue)
 
-describe('component has a name', () => {
+describe('Empresas component', () => {
+  const wrapper = mount(Empresas)
+
   it('renders correctly', () => {
-    const wrapper = mount(Empresas)
-    expect(wrapper.element).toMatchSnapshot()
-  })
-  it('renders correctly', () => {
-    const wrapper = mount(Empresas)
     expect(wrapper.element).toMatchSnapshot()
   })
 
   it('check title and h1', () => {
-    const wrapper = mount(Empresas)
     expect(wrapper.vm.title).toBe('Empresas')
     expect(wrapper.find('h1').text()).toMatch(wrapper.vm.title)
   })
@@ -35,7 +31,6 @@ describe('component has a name', () => {
         value: 10
       }
     })
-    //  const addToFav = jest.fn()
     wrapper.vm.getEmpresas()
     wrapper.vm.addToFav(wrapper.vm.newFavs)
     expect(wrapper.vm.addToFav).toContain(wrapper.vm.newFavs)
@@ -55,8 +50,20 @@ describe('component has a name', () => {
     })
   })
 
+  it('should throw error', () => {
+    const empresas = mount(Empresas, {
+      mocks: {
+        $http: {
+          get: () => new Promise(resolve => resolve({ body: ['review A', 'review B'] }))
+        }
+      }
+    })
+    flushPromises().catch(() => {
+      expect(empresas.vm.reviews).to.deep.equal(['review A', 'review B'])
+    })
+  })
+
   it('sort highest works', () => {
-    const wrapper = mount(Empresas)
     wrapper.setData({
       empresas: [{
         name: 'empresa 1',
@@ -78,7 +85,6 @@ describe('component has a name', () => {
   })
 
   it('show div if checked names is greater than 1', () => {
-    const wrapper = mount(Empresas)
     expect(wrapper.html()).not.toContain('Add to Favorites')
     wrapper.setData({
       checkedNames: ['WebExperto']
@@ -87,7 +93,6 @@ describe('component has a name', () => {
   })
 
   it('json call', () => {
-    const wrapper = mount(Empresas)
     expect(wrapper.html()).not.toContain('<h2>WebExperto</h2>')
     /*  wrapper.vm.$nextTick({
       wrapper.vm.getEmpresas()
@@ -95,4 +100,5 @@ describe('component has a name', () => {
     wrapper.vm.getEmpresas()
     expect(wrapper.html()).toContain('<h2>WebExperto</h2>') //  No encuentra h2 porque no esta presente en el snapshot
   })
+
 })

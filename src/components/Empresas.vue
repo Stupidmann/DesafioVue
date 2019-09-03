@@ -53,9 +53,11 @@ export default {
   },
   methods: {
     getEmpresas () {
+      const axios = require('axios')
       const url = './../challengeOne.json'
 
-      this.$http.get(url)
+      // this.$http.get(url)
+      axios.get(url)
         .then(function (res) {
           this.empresas = (res.data.empresas)
         })

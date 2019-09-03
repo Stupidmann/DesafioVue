@@ -11,9 +11,7 @@ Vue.use(BootstrapVue)
 
 //  Template
 
-let wrapper
-
-beforeEach(() => {
+/*  beforeEach(() => {
   wrapper = shallowMount(SimpleList, {
     propsData: {},
     mocks: {},
@@ -24,35 +22,32 @@ beforeEach(() => {
 
 afterEach(() => {
   wrapper.destroy()
-})
+})  */
 
 describe('SimpleList', () => {
+  const wrapper = mount(SimpleList)
+
   test('is a Vue instance', () => {
     expect(wrapper.isVueInstance).toBeTruthy()
   })
 
   it('renders correctly', () => {
-    const wrapper = mount(SimpleList)
     expect(wrapper.element).toMatchSnapshot()
   })
 
   it('li exists', () => {
-    wrapper = mount(SimpleList)
-    /*  wrapper.find('ul')
-    expect(wrapper.find('ul')).toBeTruthy() */
     expect(wrapper.findAll('li').length).toBe(6)
     expect(wrapper.contains('li')).toBe(true)
   })
 
   it('load details when clicked', () => {
-    wrapper = mount(SimpleList)
     expect(wrapper.html()).toContain('oferta 1')
   })
 
   it('show details when clicked', () => {
-    wrapper = mount(SimpleList)
     const liClick = wrapper.find('li')
     liClick.trigger('click')
     expect(wrapper.html()).toContain('<h2>Details of: oferta 1</h2>')
   })
+  
 })
